@@ -1,20 +1,17 @@
 {
   "name": "revaboards-ui",
   "version": "1.0.0",
-  "description": "package json for revaboards-ui",
+  "description": "A user interface for the RevaBoards application (POC)",
   "main": "index.js",
-  "dependencies": {
-    "@types/node": "^13.13.5",
-    "package.json": "^2.0.1"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "npm test"
+    "start": "tsc && cp ./src/index.html ./build/index.html && cp ./src/index.css ./build/index.css && http-server -p 3000 ./build",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/200406-java-react-usf/revaboards-ui.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {

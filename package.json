@@ -1,0 +1,24 @@
+{
+  "name": "revaboards-ui",
+  "version": "1.0.0",
+  "description": "package json for revaboards-ui",
+  "main": "index.js",
+  "dependencies": {
+    "@types/node": "^13.13.5",
+    "package.json": "^2.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/200406-java-react-usf/revaboards-ui.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/200406-java-react-usf/revaboards-ui/issues"
+  },
+  "homepage": "https://github.com/200406-java-react-usf/revaboards-ui#readme"
+}

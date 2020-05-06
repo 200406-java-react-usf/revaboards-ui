@@ -1,4 +1,5 @@
 export class User {
+    
     id: number;
     username: string;
     password: string;
@@ -15,4 +16,9 @@ export class User {
         this.email = email;
         this.role = role;
     }
+<<<<<<< HEAD
 }
+=======
+    
+}
+>>>>>>> 19af9be6075bd9d818acc1e57d541cf898108cfe

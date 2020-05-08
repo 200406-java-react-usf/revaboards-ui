@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install: 
+    runtime-versions:
+      nodejs: 12
+    commands:
+      - npm install
+  pre_build:
+    - echo "We would use 'npm test' here to run our tests (if we had any)"
+  build: 
+    - npm run build
+  post_build:
+    - aws s3 sync ./build s3://revaboards-ui
+    
+

@@ -1,5 +1,5 @@
 import { AppModule } from "./util/app-module.js";
-export const API_URL = "http://localhost:8080";
+export const API_URL = "http://ec2-18-220-167-52.us-east-2.compute.amazonaws.com:8080";
 window.onload = () => {
     console.log('page loaded.');
     const app = new AppModule();

@@ -12,6 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/200406-java-react-usf/revaboards-ui.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {

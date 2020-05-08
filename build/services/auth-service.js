@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { API_URL } from "../main.js";
 export class AuthService {
     constructor() {
-        console.log('instantiating AtuhService');
+        console.log('instantiating AuthService');
     }
     authenticate(creds) {
         return __awaiter(this, void 0, void 0, function* () {

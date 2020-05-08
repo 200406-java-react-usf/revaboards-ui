@@ -7,6 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import { state } from "../util/state.js";
 export class LoginComponent {
     constructor(authService, router) {
         this.authService = authService;
@@ -16,7 +17,7 @@ export class LoginComponent {
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
         <label for="username-cred" class="sr-only">Username</label>
         <input type="text" id="username-cred" class="form-control" placeholder="Username" autofocus>
-        <br/>
+        <br/
         <label for="password-cred" class="sr-only">Password</label>
         <input type="password" id="password-cred" class="form-control" placeholder="Password">
         <br/>
@@ -31,12 +32,13 @@ export class LoginComponent {
     </div>
     `;
         this.render = () => {
-            //Render view and necessary ELs
+            // Render view and add necessary ELs
             document.getElementById('root').innerHTML = this.template;
             document.getElementById('submit-creds').addEventListener('click', this.login);
-            // document.getElementById('password-cred').addEventListener('keydown', (e) => {
-            //     if(e.keyCode == 13)
-            // })
+            document.getElementById('password-cred').addEventListener('keydown', e => {
+                if (e.keyCode === 13)
+                    this.login();
+            });
             document.getElementById('nav-register').addEventListener('click', () => {
                 this.router.navigate('/register');
             });
@@ -45,7 +47,8 @@ export class LoginComponent {
             let username = document.getElementById('username-cred').value || '';
             let password = document.getElementById('password-cred').value || '';
             let authUser = yield this.authService.authenticate({ username, password });
-            console.log(authUser);
+            state.currentUser = authUser;
+            this.router.navigate('/dashboard');
         });
         console.log('instantiating LoginComponent');
     }

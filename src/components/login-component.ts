@@ -1,15 +1,16 @@
 import { View } from "./view.js";
 import { AuthService } from "../services/auth-service.js";
 import { Router } from "../util/router.js";
-
+import { state } from "../util/state.js";
 
 export class LoginComponent implements View {
+
     template = `
     <div class="login-form">
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
         <label for="username-cred" class="sr-only">Username</label>
         <input type="text" id="username-cred" class="form-control" placeholder="Username" autofocus>
-        <br/>
+        <br/
         <label for="password-cred" class="sr-only">Password</label>
         <input type="password" id="password-cred" class="form-control" placeholder="Password">
         <br/>
@@ -24,26 +25,32 @@ export class LoginComponent implements View {
     </div>
     `;
 
-    constructor(private authService:AuthService, private router: Router){
-        console.log('instantiating LoginComponent');
+    constructor(private authService: AuthService, private router: Router) {
+        console.log('instantiating LoginComponent')
     }
 
     render = (): void => {
-        //Render view and necessary ELs
+
+        // Render view and add necessary ELs
         document.getElementById('root').innerHTML = this.template;
         document.getElementById('submit-creds').addEventListener('click', this.login);
-        // document.getElementById('password-cred').addEventListener('keydown', (e) => {
-        //     if(e.keyCode == 13)
-        // })
+        
+        document.getElementById('password-cred').addEventListener('keydown', e => {
+            if (e.keyCode === 13) this.login();
+        });
+
         document.getElementById('nav-register').addEventListener('click', () => {
             this.router.navigate('/register');
         })
     }
 
-    login = async() => {
-        let username = ( <HTMLInputElement> document.getElementById('username-cred')).value || '';
-        let password = ( <HTMLInputElement> document.getElementById('password-cred')).value || '';
+    login = async () => {
+        let username = (<HTMLInputElement> document.getElementById('username-cred')).value || '';
+        let password = (document.getElementById('password-cred') as HTMLInputElement).value || '';
         let authUser = await this.authService.authenticate({username, password});
-        console.log(authUser);
+        state.currentUser = authUser;
+        this.router.navigate('/dashboard');
     }
+
+
 }

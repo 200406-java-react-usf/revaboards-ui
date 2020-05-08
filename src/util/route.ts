@@ -9,5 +9,4 @@ export class Route {
         this.path = path;
         this.component = component;
     }
-    
 }

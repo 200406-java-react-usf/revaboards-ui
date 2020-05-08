@@ -7,4 +7,5 @@ export class Credentials {
         this.username = un;
         this.password = pw;
     }
+    
 }

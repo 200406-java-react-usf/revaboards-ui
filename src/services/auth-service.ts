@@ -1,4 +1,4 @@
-import {Credentials} from "../models/credentials.js"
+import { Credentials } from "../models/credentials.js";
 import { API_URL } from "../main.js";
 
 export class AuthService {

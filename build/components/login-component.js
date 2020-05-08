@@ -7,6 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import { state } from "../util/state.js";
 export class LoginComponent {
     constructor(authService, router) {
         this.authService = authService;
@@ -31,7 +32,7 @@ export class LoginComponent {
     </div>
     `;
         this.render = () => {
-            // Render view and add necessary Event Listeners
+            // Render view and add necessary ELs
             document.getElementById('root').innerHTML = this.template;
             document.getElementById('submit-creds').addEventListener('click', this.login);
             document.getElementById('password-cred').addEventListener('keydown', e => {
@@ -44,10 +45,11 @@ export class LoginComponent {
         };
         this.login = () => __awaiter(this, void 0, void 0, function* () {
             let username = document.getElementById('username-cred').value || '';
-            let password = document.getElementById('password-cred').value || ''; //these two are the same
+            let password = document.getElementById('password-cred').value || '';
             let authUser = yield this.authService.authenticate({ username, password });
-            console.log(authUser);
+            state.currentUser = authUser;
+            this.router.navigate('/dashboard');
         });
-        console.log('instantiating LoginComponent...');
+        console.log('instantiating LoginComponent');
     }
 }

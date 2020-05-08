@@ -1,6 +1,7 @@
 import { View } from "./view.js";
 import { AuthService } from "../services/auth-service.js";
 import { Router } from "../util/router.js";
+import { state } from "../util/state.js";
 
 export class LoginComponent implements View {
 
@@ -25,27 +26,31 @@ export class LoginComponent implements View {
     `;
 
     constructor(private authService: AuthService, private router: Router) {
-        console.log('instantiating LoginComponent...')
+        console.log('instantiating LoginComponent')
     }
 
     render = (): void => {
 
-        // Render view and add necessary Event Listeners
+        // Render view and add necessary ELs
         document.getElementById('root').innerHTML = this.template;
         document.getElementById('submit-creds').addEventListener('click', this.login);
+        
         document.getElementById('password-cred').addEventListener('keydown', e => {
             if (e.keyCode === 13) this.login();
-        })
+        });
+
         document.getElementById('nav-register').addEventListener('click', () => {
             this.router.navigate('/register');
         })
-
     }
 
     login = async () => {
         let username = (<HTMLInputElement> document.getElementById('username-cred')).value || '';
-        let password = (document.getElementById('password-cred') as HTMLInputElement).value || ''; //these two are the same
+        let password = (document.getElementById('password-cred') as HTMLInputElement).value || '';
         let authUser = await this.authService.authenticate({username, password});
-        console.log(authUser);
+        state.currentUser = authUser;
+        this.router.navigate('/dashboard');
     }
+
+
 }

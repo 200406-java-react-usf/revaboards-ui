@@ -1,7 +1,7 @@
 export class Router {
     constructor() {
         this.routes = [];
-        this.addroutes = (rts) => {
+        this.addRoutes = (rts) => {
             rts.forEach(route => this.routes.push(route));
         };
         this.navigate = (path) => {

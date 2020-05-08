@@ -3,7 +3,6 @@ import { LoginComponent } from "../components/login-component.js";
 import { Route } from "./route.js";
 import { AuthService } from "../services/auth-service.js";
 import { RegisterComponent } from "../components/register-component.js";
-
 export class AppModule {
 
     components = {};

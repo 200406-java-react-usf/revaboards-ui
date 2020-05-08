@@ -1,8 +1,14 @@
 import { View } from "./view.js";
 import { AuthService } from "../services/auth-service.js";
 import { Router } from "../util/router.js";
+<<<<<<< HEAD
 
 export class LoginComponent implements View{
+=======
+import { state } from "../util/state.js";
+
+export class LoginComponent implements View {
+>>>>>>> 1f318d05b37ee110b95392bbdfe910e3064e8921
 
     template = `
     <div class="login-form">
@@ -25,7 +31,11 @@ export class LoginComponent implements View{
     `;
 
     constructor(private authService: AuthService, private router: Router) {
+<<<<<<< HEAD
         console.log('instantiating login component.');
+=======
+        console.log('instantiating LoginComponent')
+>>>>>>> 1f318d05b37ee110b95392bbdfe910e3064e8921
     }
 
     render = (): void => {
@@ -33,6 +43,7 @@ export class LoginComponent implements View{
         // Render view and add necessary ELs
         document.getElementById('root').innerHTML = this.template;
         document.getElementById('submit-creds').addEventListener('click', this.login);
+<<<<<<< HEAD
         document.getElementById('password-cred').addEventListener('keydown', e => {
             if (e.keyCode === 13) {
                 this.login();
@@ -50,4 +61,25 @@ export class LoginComponent implements View{
         console.log(authUser);
     }
 
+=======
+        
+        document.getElementById('password-cred').addEventListener('keydown', e => {
+            if (e.keyCode === 13) this.login();
+        });
+
+        document.getElementById('nav-register').addEventListener('click', () => {
+            this.router.navigate('/register');
+        })
+    }
+
+    login = async () => {
+        let username = (<HTMLInputElement> document.getElementById('username-cred')).value || '';
+        let password = (document.getElementById('password-cred') as HTMLInputElement).value || '';
+        let authUser = await this.authService.authenticate({username, password});
+        state.currentUser = authUser;
+        this.router.navigate('/dashboard');
+    }
+
+
+>>>>>>> 1f318d05b37ee110b95392bbdfe910e3064e8921
 }

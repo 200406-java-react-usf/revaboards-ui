@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "tsc && cp ./src/index.html ./build/index.html && cp ./src/index.css ./build/index.css && http-server -p 3000 ./build",
+    "build": "tsc && cp ./src/index.html ./build/index.html && cp ./src/index.css ./build/index.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

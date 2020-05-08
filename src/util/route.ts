@@ -10,8 +10,4 @@ export class Route {
         this.component = component;
     }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 1f318d05b37ee110b95392bbdfe910e3064e8921
 }

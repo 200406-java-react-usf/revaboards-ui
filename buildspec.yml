@@ -12,5 +12,4 @@ phases:
       - npm run build
   post_build:
     commands:
-      - aws s3 sync ./build s3://kreese-busket-demo
-      
+      - aws s3 sync ./build s3://kreese-bucket-demo

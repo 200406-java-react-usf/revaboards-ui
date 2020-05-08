@@ -6,9 +6,7 @@ phases:
       nodejs: 12
   pre_build:
     commands:
-      - cat package.json
       - npm install
-      - ls
       - echo "We would use 'npm test' here to run our tests (if we had any)"
   build: 
     commands:
@@ -16,5 +14,3 @@ phases:
   post_build:
     commands:
       - aws s3 sync ./build s3://revaboards-ui
-
-

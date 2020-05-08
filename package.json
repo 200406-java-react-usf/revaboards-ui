@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/200406-java-react-usf/revaboards-ui/issues"
   },
-  "homepage": "https://github.com/200406-java-react-usf/revaboards-ui#readme"
+  "homepage": "https://github.com/200406-java-react-usf/revaboards-ui#readme",
+  "dependencies": {
+    "http": "0.0.1-security"
+  }
 }

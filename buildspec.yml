@@ -5,7 +5,9 @@ phases:
     runtime-versions:
       nodejs: 12
     commands:
+      - ls
       - npm install
+      - ls
   pre_build:
     commands:
       - echo "We would use 'npm test' here to run our tests (if we had any)"

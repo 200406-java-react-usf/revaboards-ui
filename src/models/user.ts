@@ -1,4 +1,8 @@
 export class User {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 1f318d05b37ee110b95392bbdfe910e3064e8921
     id: number;
     username: string;
     password: string;
@@ -6,6 +10,10 @@ export class User {
     lastName: string;
     email: string;
     role: string;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1f318d05b37ee110b95392bbdfe910e3064e8921
     constructor(id: number, un: string, pw: string, fn: string, ln: string, email: string, role: string) {
         this.id = id;
         this.username = un;
@@ -15,4 +23,9 @@ export class User {
         this.email = email;
         this.role = role;
     }
+<<<<<<< HEAD
 }
+=======
+    
+}
+>>>>>>> 1f318d05b37ee110b95392bbdfe910e3064e8921

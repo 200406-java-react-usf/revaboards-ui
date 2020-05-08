@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { View } from "./view";
 import { AuthService } from "../services/auth-service";
 import { Router } from "../util/router";
@@ -5,6 +6,15 @@ import { Router } from "../util/router";
 export class LoginComponent implements View{
 
     template =
+=======
+import { View } from "./view.js";
+import { AuthService } from "../services/auth-service.js";
+import { Router } from "../util/router.js";
+import { state } from "../util/state.js";
+
+export class LoginComponent implements View {
+
+>>>>>>> 1f318d05b37ee110b95392bbdfe910e3064e8921
     template = `
     <div class="login-form">
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>

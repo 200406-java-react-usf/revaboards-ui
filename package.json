@@ -4,7 +4,7 @@
   "description": "A User interface for the RevaBoards application (POC)",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && ./src/index.html ./build/index.html && ./src/index.css ./build/index.css && http-server -p 3000 ./build"
+    "start": "tsc && ./src/index.html ./build/index.html && ./src/index.css ./build/index.css && http-server -p 3000 ./build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

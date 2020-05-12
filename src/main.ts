@@ -1,6 +1,6 @@
 import { AppModule } from "./util/app-module.js";
 
-export const API_URL = 'http://ec2-18-224-72-60.us-east-2.compute.amazonaws.com:8080';
+export const API_URL = 'http://revaboardsapi-env-1.eba-53denqsk.us-east-1.elasticbeanstalk.com'
 
 window.onload = () => {
     console.log('page loaded.');

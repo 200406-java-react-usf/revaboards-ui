@@ -35,7 +35,6 @@ const RegisterComponent = (props: IRegisterProps) => {
     const [password, setPassword] = useState('');
 
     let updateFormField = (e: any) => {
-        console.log('Triggerign update with ' + e.target.value + ' on ' + e.currentTarget.id);
         switch (e.currentTarget.id) {
             case 'firstName':
                 setFirstName(e.target.value);
@@ -44,13 +43,13 @@ const RegisterComponent = (props: IRegisterProps) => {
                 setLastName(e.target.value);
                 break;
             case 'email':
-                setEmail(e.currentTarget.value);
+                setEmail(e.target.value);
                 break;
             case 'username':
-                setUsername(e.currentTarget.value);
+                setUsername(e.target.value);
                 break;
             case 'password':
-                setPassword(e.currentTarget.value);
+                setPassword(e.target.value);
                 break;
             default:
                 console.warn(`Improper binding detected on element with id: ${e.currentTarget.id}`);
@@ -79,7 +78,7 @@ const RegisterComponent = (props: IRegisterProps) => {
                 <FormControl margin="normal" fullWidth>
                     <InputLabel htmlFor="lastName">Last Name</InputLabel>
                     <Input 
-                        onChange={updateFormField} 
+                        onChange={e => setLastName(e.target.value)} 
                         value={lastName} 
                         id="lastName" type="text" 
                         placeholder="Enter your last name" />

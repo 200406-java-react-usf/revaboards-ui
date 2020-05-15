@@ -5,8 +5,8 @@ import { Alert } from '@material-ui/lab';
 import { NewUser } from '../../dtos/new-user';
 import { User } from '../../dtos/user';
 
-interface IRegisterProps {
-    authUser: User;
+export interface IRegisterProps {
+    authUser: User | undefined;
     errorMessage: string;
     registerAction: (newUser: NewUser) => void;
 }
@@ -28,6 +28,7 @@ const RegisterComponent = (props: IRegisterProps) => {
 
     const classes = useStyles();
 
+    // * State Declaration
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');

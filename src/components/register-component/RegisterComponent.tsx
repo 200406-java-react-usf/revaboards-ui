@@ -38,19 +38,19 @@ const RegisterComponent = (props: IRegisterProps) => {
     let updateFormField = (e: any) => {
         switch (e.currentTarget.id) {
             case 'firstName':
-                setFirstName(e.currentTarget.value);
+                setFirstName(e.target.value);
                 break;
             case 'lastName':
-                setLastName(e.currentTarget.value);
+                setLastName(e.target.value);
                 break;
             case 'email':
-                setEmail(e.currentTarget.value);
+                setEmail(e.target.value);
                 break;
             case 'username':
-                setUsername(e.currentTarget.value);
+                setUsername(e.target.value);
                 break;
             case 'password':
-                setPassword(e.currentTarget.value);
+                setPassword(e.target.value);
                 break;
             default:
                 console.warn(`Improper binding detected on element with id: ${e.currentTarget.id}`);

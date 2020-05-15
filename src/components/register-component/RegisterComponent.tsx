@@ -35,12 +35,13 @@ const RegisterComponent = (props: IRegisterProps) => {
     const [password, setPassword] = useState('');
 
     let updateFormField = (e: any) => {
+        console.log('Triggerign update with ' + e.target.value + ' on ' + e.currentTarget.id);
         switch (e.currentTarget.id) {
             case 'firstName':
-                setFirstName(e.currentTarget.value);
+                setFirstName(e.target.value);
                 break;
             case 'lastName':
-                setLastName(e.currentTarget.value);
+                setLastName(e.target.value);
                 break;
             case 'email':
                 setEmail(e.currentTarget.value);
